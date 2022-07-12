@@ -31,7 +31,9 @@ USE <db_name>;
 
 ### 구름 sql cli시뮬레이션
 1. mysql-ctl cli
-2. create db이름
+2. CREATE DATABASE hello_world_db;
+	- 소문자로도 DB생성가능
+	- show databases; : DB 보기
 3. use 이름 : db 변경
 4. CREATE TABLE cats ( 어쩌구~~~);
 5. 코드 실수하면 \c로 다시 쓰기
