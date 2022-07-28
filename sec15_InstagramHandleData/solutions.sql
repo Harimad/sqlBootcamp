@@ -90,4 +90,19 @@ GROUP BY photo_tags.tag_id
 ORDER BY total DESC
 LIMIT 5;
 
--- 7-1.
+-- 7-1. We have a small problem with bots on our site...
+-- Find users who have liked every single photo on the site
+
+-- - 7. Finding the bots - the users who have liked every single photo
+SELECT
+    users.id,
+    users.username,
+    COUNT(*) as totalLikes
+FROM users
+INNER JOIN likes
+    ON users.id = likes.user_id
+GROUP BY users.username
+HAVING totalLikes = (SELECT COUNT(*) FROM photos);
+
+
+
